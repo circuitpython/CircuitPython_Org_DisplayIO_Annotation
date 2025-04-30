@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
 
+import datetime
 import os
 import sys
-import datetime
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -29,11 +27,15 @@ extensions = [
 # autodoc module docs will fail to generate with a warning.
 autodoc_mock_imports = ["terminalio", "vectorio", "bitmaptools"]
 
+autodoc_preserve_defaults = True
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
 }
+
+# Show the docstring from both the class and its __init__() method.
+autoclass_content = "both"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -44,8 +46,13 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = " CircuitPython DisplayIO_Annotation Library"
-copyright = "2021 Kevin Matocha"
+project = "CircuitPython DisplayIO_Annotation Library"
+creation_year = "2021"
+current_year = str(datetime.datetime.now().year)
+year_duration = (
+    current_year if current_year == creation_year else creation_year + " - " + current_year
+)
+copyright = year_duration + " Kevin Matocha"
 author = "Kevin Matocha"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -67,7 +74,13 @@ language = "en"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", ".env", "CODE_OF_CONDUCT.md"]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    ".env",
+    "CODE_OF_CONDUCT.md",
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -97,7 +110,6 @@ napoleon_numpy_docstring = False
 import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), "."]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -111,22 +123,18 @@ html_static_path = ["_static"]
 html_favicon = "_static/favicon.ico"
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "CircuitPython_Displayio_annotationLibrarydoc"
+htmlhelp_basename = "CircuitPython_Displayio_annotation_Librarydoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
-    #
     # 'papersize': 'letterpaper',
     # The font size ('10pt', '11pt' or '12pt').
-    #
     # 'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
-    #
     # 'preamble': '',
     # Latex figure (float) alignment
-    #
     # 'figure_align': 'htbp',
 }
 
@@ -136,7 +144,7 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "CircuitPython_DisplayIO_AnnotationLibrary.tex",
+        "CircuitPython_DisplayIO_Annotation_Library.tex",
         "CircuitPython DisplayIO_Annotation Library Documentation",
         author,
         "manual",
@@ -150,11 +158,11 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "CircuitPython_DisplayIO_AnnotationLibrary",
+        "CircuitPython_DisplayIO_Annotation_Library",
         "CircuitPython DisplayIO_Annotation Library Documentation",
         [author],
         1,
-    )
+    ),
 ]
 
 # -- Options for Texinfo output -------------------------------------------
@@ -165,10 +173,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "CircuitPython_DisplayIO_AnnotationLibrary",
+        "CircuitPython_DisplayIO_Annotation_Library",
         "CircuitPython DisplayIO_Annotation Library Documentation",
         author,
-        "CircuitPython_DisplayIO_AnnotationLibrary",
+        "CircuitPython_DisplayIO_Annotation_Library",
         "One line description of project.",
         "Miscellaneous",
     ),

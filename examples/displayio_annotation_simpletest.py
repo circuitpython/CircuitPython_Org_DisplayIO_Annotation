@@ -7,11 +7,12 @@ for freeform annotation.
 """
 
 import time
+
+import adafruit_touchscreen
 import board
 import displayio
-import adafruit_touchscreen
-from adafruit_displayio_layout.widgets.switch_round import SwitchRound as Switch
 from adafruit_displayio_layout.widgets.annotation import Annotation
+from adafruit_displayio_layout.widgets.switch_round import SwitchRound as Switch
 
 display = board.DISPLAY
 

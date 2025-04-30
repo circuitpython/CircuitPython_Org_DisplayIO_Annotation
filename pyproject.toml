@@ -24,10 +24,11 @@ keywords = [
     "blinka",
     "circuitpython",
     "micropython",
-    "displayio",
     "displayio_annotation",
+    "displayio",
+    "annotation",
     "graphics",
-    "widget"
+    "widget",
 ]
 license = {text = "MIT"}
 classifiers = [
