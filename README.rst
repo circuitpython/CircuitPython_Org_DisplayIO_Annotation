@@ -2,8 +2,8 @@ Introduction
 ============
 
 
-.. image:: https://readthedocs.org/projects/circuitpython-displayio_annotation/badge/?version=latest
-    :target: https://circuitpython-displayio_annotation.readthedocs.io/
+.. image:: https://readthedocs.org/projects/circuitpython-displayio-annotation/badge/?version=latest
+    :target: https://circuitpython-displayio-annotation.readthedocs.io/
     :alt: Documentation Status
 
 
@@ -17,9 +17,9 @@ Introduction
     :alt: Build Status
 
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
-    :alt: Code Style: Black
+.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+    :target: https://github.com/astral-sh/ruff
+    :alt: Code Style: Ruff
 
 A CircuitPython DisplayIO widget for annotating other widgets or freeform positions.
 
