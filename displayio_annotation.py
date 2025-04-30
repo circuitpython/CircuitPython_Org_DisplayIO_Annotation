@@ -21,7 +21,6 @@ Implementation Notes
 
 """
 
-
 from adafruit_display_shapes.line import Line
 from adafruit_display_text import bitmap_label
 from adafruit_displayio_layout.widgets.widget import Widget
