@@ -21,12 +21,10 @@ Implementation Notes
 
 """
 
-# pylint: disable=too-many-arguments, too-many-locals, unused-argument, too-few-public-methods
-
-from terminalio import FONT
-from adafruit_display_text import bitmap_label
 from adafruit_display_shapes.line import Line
+from adafruit_display_text import bitmap_label
 from adafruit_displayio_layout.widgets.widget import Widget
+from terminalio import FONT
 
 
 class Annotation(Widget):
@@ -96,7 +94,7 @@ class Annotation(Widget):
       File location: *examples/displayio_annotation_simpletest.py*
     """
 
-    def __init__(
+    def __init__(  # noqa: PLR0913, PLR0917, too many args, too many positional args
         self,
         x=None,
         y=None,
@@ -123,16 +121,8 @@ class Annotation(Widget):
             widget_width = widget.bounding_box[2]
             widget_height = widget.bounding_box[3]
             if anchor_point is not None:
-                line_x0 = (
-                    widget.x
-                    + round(widget_width * anchor_point[0])
-                    + position_offset[0]
-                )
-                line_y0 = (
-                    widget.y
-                    + round(widget_height * anchor_point[1])
-                    + position_offset[1]
-                )
+                line_x0 = widget.x + round(widget_width * anchor_point[0]) + position_offset[0]
+                line_y0 = widget.y + round(widget_height * anchor_point[1]) + position_offset[1]
             elif anchored_position is not None:
                 line_x0 = widget.x + anchored_position[0] + position_offset[0]
                 line_y0 = widget.y + anchored_position[1] + position_offset[1]
@@ -156,9 +146,7 @@ class Annotation(Widget):
             text_anchor_point = (1.0, 1.0)
             underline_x_multiplier = -1
 
-        if (
-            text_under
-        ):  # if text is under the line, set to text_anchor_point to upper edge
+        if text_under:  # if text is under the line, set to text_anchor_point to upper edge
             text_anchor_point = (text_anchor_point[0], 0.0)
 
         if text_color is None:
